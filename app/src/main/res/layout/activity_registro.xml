@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.Registro">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nuevo registro"
+            android:textSize="60sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"/>
+
+        <EditText
+            android:id="@+id/Usuario"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Nombre de usuario"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
+            android:inputType="textPersonName"
+            android:textSize="15sp"
+            android:padding="15dp"/>
+
+        <EditText
+            android:id="@+id/Correo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Correo electrónico"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:inputType="textEmailAddress"
+            android:textSize="15sp"
+            android:padding="15dp"/>
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Contraseña"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:inputType="textPassword"
+            android:textSize="15sp"
+            android:padding="15dp"/>
+
+        <EditText
+            android:id="@+id/Repetir"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Repetir contraseña"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp"
+            android:inputType="textPassword"
+            android:textSize="15sp"
+            android:padding="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal">
+
+
+        <Button
+            android:id="@+id/inicio_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp" />
+
+        <TextView
+            android:id="@+id/volver_inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver a inicio de sesión"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
