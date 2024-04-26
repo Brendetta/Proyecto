@@ -81,7 +81,7 @@ class CrearNuevaLista : AppCompatActivity() {
             val nuevoProducto = etNuevoProducto.text.toString()
             etNuevoProducto.setText("")
 
-            productos.add(ProductoData(null, nuevoProducto))
+            productos.add(ProductoData(null, nuevoProducto, 0))
             this.actualizaLVProductos()
         }
 

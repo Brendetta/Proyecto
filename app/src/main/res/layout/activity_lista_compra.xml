@@ -4,23 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ListaCompra">
+    tools:context=".Activities.ListaCompra"
+    android:background="@drawable/background_book">
 
     <ListView
         android:id="@+id/lista"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#EDE7F6">
-    </ListView>
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:background="#70FBECD9"></ListView>
 
     <ImageButton
         android:id="@+id/add_new"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:backgroundTint="#EDE7F6"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#70F9E8D7"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </RelativeLayout>

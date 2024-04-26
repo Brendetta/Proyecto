@@ -17,7 +17,7 @@ class BaseDatos(context: AppCompatActivity) :
 
     companion object {
         private const val DATABASE_NAME = "listapp.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 3
 
     }
 
@@ -45,6 +45,7 @@ class BaseDatos(context: AppCompatActivity) :
         return ("CREATE TABLE IF NOT EXISTS Productos(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT," +
+                "comprado INTEGER," +
                 "id_lista INTEGER," +
                 "FOREIGN KEY(id_lista) REFERENCES Lista_compra(id))")
     }
@@ -109,7 +110,7 @@ class BaseDatos(context: AppCompatActivity) :
                 result = true
 
                 for (producto in productos) {
-                    this.insertarProducto(producto.id, producto.nombre, id_lista.toInt())
+                    this.insertarProducto(producto.id, producto.nombre, producto.comprado, id_lista.toInt())
                 }
                 for (productoEliminado in productosEliminados) {
                     this.eliminarProducto(productoEliminado.id)
@@ -145,11 +146,13 @@ class BaseDatos(context: AppCompatActivity) :
 
         return listaCompra
     }
-    fun insertarProducto (id: Int?, nombre: String, id_lista: Int): Boolean{
+
+    fun insertarProducto (id: Int?, nombre: String, comprado: Int, id_lista: Int): Boolean{
         val db: SQLiteDatabase = writableDatabase
         val contentValues = ContentValues().apply {
             put("id",id)
             put("nombre", nombre)
+            put("comprado", comprado)
             put("id_lista", id_lista)
         }
         val result= db.insertWithOnConflict("Productos", null, contentValues, SQLiteDatabase.CONFLICT_REPLACE)
@@ -169,7 +172,8 @@ class BaseDatos(context: AppCompatActivity) :
                 do {
                     val id = cursor.getInt(cursor.getColumnIndex("id"))
                     val nombre = cursor.getString(cursor.getColumnIndex("nombre"))
-                    listaProductos.add(ProductoData(id, nombre))
+                    val comprado = cursor.getInt(cursor.getColumnIndex("comprado"))
+                    listaProductos.add(ProductoData(id, nombre, comprado))
                 }while (cursor.moveToNext())
             }
         }catch(error: Exception){

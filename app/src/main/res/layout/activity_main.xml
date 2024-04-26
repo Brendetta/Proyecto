@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1BEE7"
+    android:background="@drawable/background_login"
     tools:context=".Activities.MainActivity">
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_anchor="@+id/linearLayout2"
+        app:layout_anchorGravity="center">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,7 +35,7 @@
             android:id="@+id/nombre_usuario"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Usuario"
+            android:hint="Correo electrónico"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="25dp"
@@ -70,6 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Iniciar sesión"
+            android:backgroundTint="#AC786C"
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp" />
 

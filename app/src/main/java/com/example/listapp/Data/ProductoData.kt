@@ -3,17 +3,19 @@ package com.example.listapp.Data
 import android.os.Parcel
 import android.os.Parcelable
 
-data class ProductoData(val id: Int?, var nombre: String): Parcelable{
+data class ProductoData(val id: Int?, var nombre: String, var comprado: Int): Parcelable{
 
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString().toString()
+        parcel.readString().toString(),
+        parcel.readInt()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(id)
         parcel.writeString(nombre)
+        parcel.writeInt(comprado)
     }
 
     override fun describeContents(): Int {
@@ -32,10 +34,6 @@ data class ProductoData(val id: Int?, var nombre: String): Parcelable{
     }
     override fun toString(): String{
         return nombre
-    }
-
-    fun remove(position: Any) {
-
     }
 
 }
