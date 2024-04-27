@@ -28,9 +28,6 @@ import com.example.listapp.UserStore
 
 class ListaCompra : AppCompatActivity() {
 
-    var productosEliminados : MutableList<ProductoData> = mutableListOf()
-    var productos: MutableList<ProductoData> = mutableListOf()
-    var productoSeleccionado: ProductoData? = null
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

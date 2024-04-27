@@ -47,7 +47,7 @@ class Registro : AppCompatActivity() {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 }else{
-                    Toast.makeText(this, "No se pudo crear el usuario", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show()
                 }
             }else{
                 Toast.makeText(this, "La contraseña no coincide", Toast.LENGTH_SHORT).show()
