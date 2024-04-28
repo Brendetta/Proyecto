@@ -41,6 +41,7 @@ class CrearNuevaLista : AppCompatActivity() {
         //Dar un título a la nueva lista
         val tvTitulo : TextView = findViewById(R.id.titulo)
         tvTitulo.text = listaCompra?.titulo
+
         // Recuperar productos si estamos en editar
         if(listaCompra != null) {
             val dbHelper = BaseDatos(this)
@@ -48,7 +49,7 @@ class CrearNuevaLista : AppCompatActivity() {
         } else {
             productos = mutableListOf()
         }
-        this.actualizaLVProductos()
+        this.actualizaLvProductos()
         productosEliminados = mutableListOf()
 
         //insertar en la BBDD
@@ -82,7 +83,7 @@ class CrearNuevaLista : AppCompatActivity() {
             etNuevoProducto.setText("")
 
             productos.add(ProductoData(null, nuevoProducto, 0))
-            this.actualizaLVProductos()
+            this.actualizaLvProductos()
         }
 
         val listView = findViewById<ListView>(R.id.lista_productos)
@@ -98,7 +99,7 @@ class CrearNuevaLista : AppCompatActivity() {
 
     }
 
-    fun actualizaLVProductos() {
+    fun actualizaLvProductos() {
         val listView = findViewById<ListView>(R.id.lista_productos)
 
         //Creamos un ArrayAdapter para manejar los elementos de la lista
@@ -124,12 +125,11 @@ class CrearNuevaLista : AppCompatActivity() {
         ) { dialog, which ->
             dialog.dismiss()
             productoSeleccionado?.nombre = input.getText().toString()
-            this.actualizaLVProductos()
+            this.actualizaLvProductos()
         }
         builder.setNegativeButton(
             "Cancelar"
         ) { dialog, which -> dialog.cancel() }
-
 
         builder.show()
     }
@@ -143,7 +143,7 @@ class CrearNuevaLista : AppCompatActivity() {
             dialog.dismiss()
             productos?.remove(productoSeleccionado)
             productoSeleccionado?.let { productosEliminados.add(it) }
-            this.actualizaLVProductos()
+            this.actualizaLvProductos()
         }
         builder.setNegativeButton(
             "No"

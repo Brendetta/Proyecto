@@ -17,7 +17,7 @@ class BaseDatos(context: AppCompatActivity) :
 
     companion object {
         private const val DATABASE_NAME = "listapp.db"
-        private const val DATABASE_VERSION = 3
+        private const val DATABASE_VERSION = 1
 
     }
 

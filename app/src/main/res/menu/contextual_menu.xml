@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/fragment_modificar"
+        android:id="@+id/mModificar"
         android:title="Editar">
 
     </item>
     <item
-        android:id="@+id/fragment_eliminar"
+        android:id="@+id/mEliminar"
         android:title="Eliminar">
 
     </item>

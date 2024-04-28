@@ -54,8 +54,5 @@ class Registro : AppCompatActivity() {
                 tvConfirmar.setText("")
             }
         }
-
     }
-
-
 }

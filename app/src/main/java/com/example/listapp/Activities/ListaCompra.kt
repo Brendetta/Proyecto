@@ -60,13 +60,13 @@ class ListaCompra : AppCompatActivity() {
         val listaCompraData: ListaCompraData = listView.adapter.getItem(pos) as ListaCompraData
 
         return when(item.itemId) {
-            R.id.fragment_modificar -> {
+            R.id.mModificar -> {
                 val intent = Intent(this, CrearNuevaLista::class.java)
                 intent.putExtra("listaCompra", listaCompraData)
                 startActivity(intent)
                 return true
             }
-            R.id.fragment_eliminar -> {
+            R.id.mEliminar -> {
                 val dbHelper = BaseDatos(this)
                 dbHelper.eliminarLista(listaCompraData?.id)
                 this.actualizarLvLista()
